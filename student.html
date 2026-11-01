@@ -1,0 +1,137 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body class="app-shell">
+
+<aside class="sidebar" id="sidebar">
+    <a class="brand"><span>🚌</span> College Bus<br>Tracking</a>
+
+    <nav class="nav">
+        <a class="active" href="student.html">⌂ &nbsp; Dashboard</a>
+        <a href="#mapPanel">⌖ &nbsp; Track Bus</a>
+        <a href="#busInfo">▣ &nbsp; My Bus</a>
+        <a href="#stops">♧ &nbsp; Stops</a>
+        <a href="#arrivalInfo">◷ &nbsp; Arrival Updates</a>
+    </nav>
+
+    <div class="side-bottom">
+        <small>STUDENT ACCOUNT</small>
+        <button class="logout" id="logoutBtn">↪ Logout</button>
+    </div>
+</aside>
+
+<main class="main">
+
+    <header class="topbar">
+        <div>
+            <button class="mobile-menu" id="menuBtn">☰</button>
+            <h1>Welcome, <span id="userName">Student</span> 👋</h1>
+            <p>Here is your college bus journey overview.</p>
+        </div>
+        <div class="date-chip" id="dateTime"></div>
+    </header>
+
+    <section class="grid">
+
+        <article class="stat">
+            <small>BUS NUMBER</small>
+            <strong>KA-01-AB-1234</strong>
+            <em>Assigned to you</em>
+        </article>
+
+        <article class="stat">
+            <small>ROUTE</small>
+            <strong>North Campus</strong>
+            <em>Regular route</em>
+        </article>
+
+        <article class="stat">
+            <small>BUS STATUS</small>
+            <strong id="status">On time</strong>
+            <em>● Demo tracking active</em>
+        </article>
+
+        <article class="stat">
+            <small>ESTIMATED ARRIVAL</small>
+            <strong><span id="eta">6</span> min</strong>
+            <em>Sample estimate</em>
+        </article>
+
+    </section>
+
+    <!-- DRIVER ARRIVAL UPDATE DISPLAY -->
+
+    <article class="panel" id="arrivalInfo">
+        <h2>Bus Arrival Information</h2>
+
+        <h3 id="studentStatus">Waiting for driver update</h3>
+
+        <p>
+            <b>Expected Arrival:</b>
+            <span id="studentETA">Not updated</span>
+        </p>
+
+        <p>
+            <b>Driver Message:</b>
+            <span id="studentMessage">No message</span>
+        </p>
+
+        <p>
+            <b>Last Updated:</b>
+            <span id="studentUpdateTime">Not updated</span>
+        </p>
+    </article>
+
+    <section class="split">
+
+        <article class="panel" id="mapPanel">
+            <h2>Live Bus Location <span class="tag">LIVE DEMO</span></h2>
+
+            <div id="studentMap" class="mapbox"></div>
+
+            <p>
+                Bus movement is simulated for your project demonstration;
+                this is not a real GPS feed.
+            </p>
+        </article>
+
+        <div>
+
+            <article class="panel" id="busInfo">
+                <h2>Bus & Driver Details</h2>
+
+                <p><b>Bus:</b> KA-01-AB-1234</p>
+                <p><b>Route:</b> North Campus Route</p>
+                <p><b>Driver:</b> Rohit Kumar</p>
+                <p><b>Speed:</b> <span id="speed">28</span> km/h</p>
+            </article>
+
+            <article class="panel" id="stops">
+                <h2>Upcoming Stops</h2>
+
+                <p>1. Main Gate</p>
+                <p>2. Library <span class="tag blue">Current</span></p>
+                <p>3. Science Block</p>
+                <p>4. Hostel</p>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="common.js"></script>
+<script src="student.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Driver Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-shell">
+
+<aside class="sidebar" id="sidebar">
+    <a class="brand"><span>🚌</span> College Bus<br>Tracking</a>
+    <nav class="nav">
+        <a class="active" href="driver.html">⌂ &nbsp; Driver Dashboard</a>
+        <a href="#trip">▣ &nbsp; My Trip</a>
+        <a href="#location">⌖ &nbsp; Location</a>
+    </nav>
+    <div class="side-bottom">
+        <small>DRIVER ACCOUNT</small>
+        <button class="logout" id="logoutBtn">↪ Logout</button>
+    </div>
+</aside>
+
+<main class="main">
+    <header class="topbar">
+        <div>
+            <button class="mobile-menu" id="menuBtn">☰</button>
+            <h1>Welcome, <span id="userName">Driver</span></h1>
+            <p>Manage your assigned bus trip.</p>
+        </div>
+        <div class="date-chip" id="dateTime"></div>
+    </header>
+
+    <section class="grid">
+        <article class="stat">
+            <small>ASSIGNED BUS</small>
+            <strong>KA-01-AB-1234</strong>
+            <em>North Campus Route</em>
+        </article>
+        <article class="stat">
+            <small>TRIP STATUS</small>
+            <strong id="tripStatus">Not started</strong>
+            <em>Demo control</em>
+        </article>
+        <article class="stat">
+            <small>GPS SHARING</small>
+            <strong id="gpsStatus">Off</strong>
+            <em>Browser simulation</em>
+        </article>
+        <article class="stat">
+            <small>LOCATION UPDATES</small>
+            <strong id="updates">0</strong>
+            <em>During this session</em>
+        </article>
+    </section>
+
+    <article class="panel" id="trip">
+        <h2>Trip Controls</h2>
+        <p>Start the demonstration to simulate sending your bus location.</p>
+        <div class="driver-controls">
+            <button class="start" id="startTrip">▶ Start trip & location sharing</button>
+            <button class="stop" id="stopTrip">■ Stop trip</button>
+        </div>
+        <p id="driverMessage" class="notice" style="margin-top:15px">
+            Your trip has not started.
+        </p>
+    </article>
+
+    <!-- NEW ARRIVAL STATUS SECTION -->
+    <article class="panel" id="arrival">
+        <h2>Update Bus Arrival Status</h2>
+
+        <form id="arrivalForm">
+            <label for="arrivalStatus">Bus Arrival Status</label>
+            <select id="arrivalStatus">
+                <option value="on-time">On Time</option>
+                <option value="delayed">Delayed</option>
+                <option value="unable">Unable to Arrive</option>
+            </select>
+
+            <label for="arrivalMinutes">Expected Arrival (minutes)</label>
+            <input type="number" id="arrivalMinutes"
+                   value="6" min="0" max="240">
+
+            <label for="arrivalMessage">Reason / Message</label>
+            <input type="text" id="arrivalMessage"
+                   placeholder="Example: Heavy traffic">
+
+            <button type="submit" class="start">
+                Publish Update to Students
+            </button>
+        </form>
+
+        <p id="publishedStatus">No arrival update published.</p>
+    </article>
+
+    <article class="panel" id="location">
+        <h2>Assigned Route</h2>
+        <p><b>Start:</b> Main Gate</p>
+        <p><b>Stops:</b> Library → Science Block → Hostel</p>
+        <p><b>Destination:</b> College Campus</p>
+        <span class="tag blue">Sample route data</span>
+    </article>
+</main>
+
+<script src="common.js"></script>
+<script src="driver.js"></script>
+</body>
+</html>

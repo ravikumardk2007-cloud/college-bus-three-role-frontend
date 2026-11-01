@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>College Bus Tracking | Login</title><link rel="stylesheet" href="style.css"></head>
+<body class="login-page">
+  <main class="login-shell">
+    <section class="login-brand">
+      <div class="brand-mark">🚌</div><p class="eyebrow">SMART CAMPUS TRANSPORT</p>
+      <h1>College Bus<br>Tracking System</h1>
+      <p class="brand-sub">A simple way to stay connected with your college commute.</p>
+      <div class="brand-points"><span>✓ Live-style bus tracking demo</span><span>✓ Separate role dashboards</span><span>✓ Works on desktop and mobile</span></div>
+      <div class="brand-foot">FRONTEND PROJECT · DEMO MODE</div>
+    </section>
+    <section class="login-side">
+      <div class="login-card">
+        <div class="small-logo">🚌 <b>CampusRide</b></div>
+        <p class="eyebrow blue-text">WELCOME BACK</p><h2>Sign in to continue</h2><p class="muted">Choose your account type and enter the demo credentials.</p>
+        <div class="role-tabs" role="tablist">
+          <button class="role-tab active" data-role="student">Student</button>
+          <button class="role-tab" data-role="driver">Driver</button>
+          <button class="role-tab" data-role="admin">Admin</button>
+        </div>
+        <form id="loginForm">
+          <label for="email">Email address</label><input id="email" type="email" autocomplete="username" required>
+          <label for="password">Password</label><div class="password-wrap"><input id="password" type="password" autocomplete="current-password" required><button type="button" id="togglePassword">Show</button></div>
+          <button class="primary-btn full" type="submit">Sign in <span>→</span></button>
+          <p id="loginError" class="error" role="alert"></p>
+        </form>
+        <div class="demo-box"><b>Demo login details</b><div><span>Student</span><code>student@demo.com / student123</code></div><div><span>Driver</span><code>driver@demo.com / driver123</code></div><div><span>Admin</span><code>admin@demo.com / admin123</code></div></div>
+        <p class="security-note">Demo only: credentials are checked in browser JavaScript. Do not use real passwords.</p>
+      </div>
+    </section>
+  </main><script src="login.js"></script>
+</body></html>
